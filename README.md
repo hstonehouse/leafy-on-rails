@@ -1,5 +1,7 @@
-# README
+# LEAFY 2.0
+I am rewriting my [Leafy app](https://github.com/hstonehouse/leafy) using Ruby on Rails as a way to practice RoR as well as finish up the features that I didn't get to the first time around, namely partial searching.
 
+## TODOS:
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
