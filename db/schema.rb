@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_085537) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_090725) do
   create_table "aliases", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -29,4 +29,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_085537) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "aliases", "plants"
 end
