@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_090725) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_06_031205) do
   create_table "aliases", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -19,12 +19,28 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_090725) do
     t.index ["plant_id"], name: "index_aliases_on_plant_id"
   end
 
+  create_table "favourites", force: :cascade do |t|
+    t.integer "plants_id"
+    t.integer "users_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plants_id"], name: "index_favourites_on_plants_id"
+    t.index ["users_id"], name: "index_favourites_on_users_id"
+  end
+
   create_table "plants", force: :cascade do |t|
     t.string "title"
     t.string "image"
     t.string "water"
     t.string "light"
     t.string "pet_safe"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email"
+    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
