@@ -2,6 +2,6 @@
 
 class AddPlantToAliases < ActiveRecord::Migration[7.0]
   def change
-    add_reference :aliases, :plant
+    add_reference :aliases, :plant, index: true
   end
 end
