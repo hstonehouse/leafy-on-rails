@@ -12,43 +12,45 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_230_707_031_520) do
+ActiveRecord::Schema[7.0].define(version: 20_230_707_055_642) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'aliases', force: :cascade do |t|
-    t.string 'name'
+    t.text 'name'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.integer 'plant_id'
+    t.bigint 'plant_id'
     t.index ['plant_id'], name: 'index_aliases_on_plant_id'
   end
 
   create_table 'favourites', force: :cascade do |t|
-    t.integer 'plants_id'
-    t.integer 'users_id'
+    t.bigint 'user_id', null: false
+    t.bigint 'plant_id', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-    t.index ['plants_id'], name: 'index_favourites_on_plants_id'
-    t.index ['users_id'], name: 'index_favourites_on_users_id'
+    t.index ['plant_id'], name: 'index_favourites_on_plant_id'
+    t.index ['user_id'], name: 'index_favourites_on_user_id'
   end
 
   create_table 'plants', force: :cascade do |t|
-    t.string 'title'
-    t.string 'image'
-    t.string 'water'
-    t.string 'light'
-    t.string 'pet_safe'
+    t.text 'title'
+    t.text 'image'
+    t.text 'water'
+    t.text 'light'
+    t.text 'pet_safe'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
   create_table 'users', force: :cascade do |t|
-    t.string 'email'
-    t.string 'password'
+    t.text 'email'
+    t.text 'password'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
   end
 
   add_foreign_key 'aliases', 'plants', on_delete: :cascade
+  add_foreign_key 'favourites', 'plants'
+  add_foreign_key 'favourites', 'users'
 end

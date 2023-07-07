@@ -3,8 +3,8 @@
 class CreateFavourites < ActiveRecord::Migration[7.0]
   def change
     create_table :favourites do |t|
-      t.belongs_to :plants
-      t.belongs_to :users
+      t.references :user, null: false, foreign_key: true
+      t.references :plant, null: false, foreign_key: true
 
       t.timestamps
     end
