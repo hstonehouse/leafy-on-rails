@@ -50,5 +50,5 @@ ActiveRecord::Schema[7.0].define(version: 20_230_707_031_520) do
     t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key 'aliases', 'plants'
+  add_foreign_key 'aliases', 'plants', on_delete: :cascade
 end
