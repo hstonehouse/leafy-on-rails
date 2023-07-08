@@ -73,7 +73,7 @@ Plant.create!(
      pet_safe: 'Safe in small amounts.'
    },
    {
-     title: 'Peacock plant',
+     title: 'Peacock Plant',
      image: 'peacock.jpeg',
      water: 'Maintain moist soil. Water once the surface of the soil starts to dry.',
      light: 'Bright, indirect light. Avoid direct sunlight.',
@@ -93,5 +93,109 @@ Plant.create!(
      water: 'Lightly moist but not soggy soil. Better to underwater than overwater.',
      light: 'Light shade. Avoid direct sunlight.',
      pet_safe: 'Yes.'
+   }]
+)
+
+Alias.destroy_all
+Alias.create!(
+  [{
+    name: 'begonia maculata',
+    plant_id: Plant.find_by(title: 'Polka Dot Begonia').id
+  },
+   {
+     name: 'polka dot plant',
+     plant_id: Plant.find_by(title: 'Polka Dot Begonia').id
+   },
+   {
+     name: 'angel wing',
+     plant_id: Plant.find_by(title: 'Polka Dot Begonia').id
+   },
+   {
+     name: 'spotted begonia',
+     plant_id: Plant.find_by(title: 'Polka Dot Begonia').id
+   },
+   {
+     name: 'sword fern',
+     plant_id: Plant.find_by(title: 'Boston Fern').id
+   },
+   {
+     name: 'nephrolepis exaltata',
+     plant_id: Plant.find_by(title: 'Boston Fern').id
+   },
+   {
+     name: 'pothos',
+     plant_id: Plant.find_by(title: "Devil's Ivy").id
+   },
+   {
+     name: 'epipremnum aureum',
+     plant_id: Plant.find_by(title: "Devil's Ivy").id
+   },
+   {
+     name: 'swiss cheese vine',
+     plant_id: Plant.find_by(title: 'Swiss Cheese Plant').id
+   },
+   {
+     name: 'monstera adansonii',
+     plant_id: Plant.find_by(title: 'Swiss Cheese Plant').id
+   },
+   {
+     name: 'five holes plant',
+     plant_id: Plant.find_by(title: 'Swiss Cheese Plant').id
+   },
+   {
+     name: 'monstera deliciosa',
+     plant_id: Plant.find_by(title: 'Monstera').id
+   },
+   {
+     name: 'scindapsus pictus',
+     plant_id: Plant.find_by(title: 'Satin Pothos').id
+   },
+   {
+     name: 'silver vine',
+     plant_id: Plant.find_by(title: 'Satin Pothos').id
+   },
+   {
+     name: 'silver pothos',
+     plant_id: Plant.find_by(title: 'Satin Pothos').id
+   },
+   {
+     name: 'philodendron cordatum',
+     plant_id: Plant.find_by(title: 'Heartleaf Philodendron').id
+   },
+   {
+     name: 'ficus elastica burgundy',
+     plant_id: Plant.find_by(title: 'Rubber Plant').id
+   },
+   {
+     name: 'rubber fig',
+     plant_id: Plant.find_by(title: 'Rubber Plant').id
+   },
+   {
+     name: 'rubber tree',
+     plant_id: Plant.find_by(title: 'Rubber Plant').id
+   },
+   {
+     name: 'hypoestes phyllostachya',
+     plant_id: Plant.find_by(title: 'Triple Splash').id
+   },
+   {
+     name: 'goeppertia makoyana',
+     plant_id: Plant.find_by(title: 'Peacock Plant').id
+   },
+   {
+     name: 'calathea makoyana',
+     plant_id: Plant.find_by(title: 'Peacock Plant').id
+   },
+   {
+     name: 'calathea zebrina',
+     plant_id: Plant.find_by(title: 'Zebra Plant').id
+   },
+   {
+     name: 'chlorophytum comosum',
+     plant_id: Plant.find_by(title: 'Spider Plant').id
+   },
+   {
+     name: 'ribbon plant',
+     plant_id: Plant.find_by(title: 'Spider Plant').id
    }]
 )
