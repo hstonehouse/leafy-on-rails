@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import { Home } from './pages/home';
+import { Login } from "./pages/login";
+import { Register } from "./pages/register";
+import { MyPlants } from "./pages/myplants";
+import { PlantPage } from "./pages/plant";
+import { PlantDirectory } from "./pages/plantdirectory";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faArrowLeft, faSeedling, faBars, faPlusSquare} from '@fortawesome/free-solid-svg-icons';
+import './assets/css/App.css';
+
+library.add(faArrowLeft, faSeedling, faBars, faPlusSquare);
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div >
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/myplants" element={<MyPlants />}></Route>
+        <Route path="/plant/:id" element={<PlantPage />}></Route>
+        <Route path="/plantdirectory" element={<PlantDirectory />}></Route>
+      </Routes>
+    </BrowserRouter>
+  </div>
   );
 }
 
