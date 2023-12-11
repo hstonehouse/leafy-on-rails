@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import '../assets/css/home.css';
 
 export function Home() {
-  fetch('http://localhost:3000/home/index')
     return (
         <main>
             <div className="homepage-container">
