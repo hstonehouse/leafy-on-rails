@@ -51,7 +51,7 @@ export function PlantDirectory() {
       <div className="all-plants">
         {
           plantArray.map(plant =>
-            <Link to={`/plant/${plant.plant_id}`} key={plant.plant_id}>
+            <Link to={`/plant/${plant.id}`} key={plant.id}>
               <GridImage key={plant.plant_id} image={`/images/${plant.image}`} name={plant.title}/>
             </Link>
           )
