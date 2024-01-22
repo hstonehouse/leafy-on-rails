@@ -1,0 +1,129 @@
+#navbar {
+  padding-top: 25px;
+}
+
+#navbar > p {
+  font-size: 25px;
+  color: rgb(17,136,60);
+  user-select: none;
+}
+
+#add, #burger {
+  color: rgb(209,231,204);
+}
+
+/* Sidebar */
+.sidebar {
+  position: absolute;
+  background-color: black;
+  z-index: 1;
+  height: 100vh;
+  width: 28%;
+  display: none;
+}
+
+.sidebar ul {
+  padding-top: 20px;
+  padding-left: 15px;
+}
+
+#small-arrow {
+  color: rgb(17,136,60);
+}
+
+.sidebar li {
+  margin-top: 15px;
+}
+
+.sidebar a {
+  color: white;
+}
+
+/* Search Bar */
+#searchbar {
+  padding-top: 20px;
+  display: none;
+  flex-direction: column;
+}
+
+#searchbar p {
+  margin-bottom: 20px;
+}
+
+/* My plants page */
+#my-plants > p {
+  display: flex;
+  justify-content: center;
+  transform: translate(0%, 650%);
+}
+
+.all-plants {
+  width: 65%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  transform: translate(25%, 0%);
+  padding-top: 30px;
+}
+
+#single-plant {
+  height: 10em;
+  width: 100%;
+  object-fit: cover;
+}
+
+.plantsquare {
+  position: relative;
+  overflow: hidden;
+  background-color: grey;
+  margin: 4px;
+  border-radius: 15px;
+  height: 10em;
+  display: flex;
+  flex-direction: column;
+}
+
+.bottom-left {
+  position: absolute;
+  color: black;
+  bottom: 2px;
+  left: 10px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* CSS for browser view */
+@media (min-width: 500px) {
+  .all-plants {
+      width: 63%;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      transform: translate(30%, 0%);
+      grid-gap: 10px;
+  }
+  .plantsquare {
+      position: relative;
+      overflow: hidden;
+      background-color: grey;
+      margin: 4px;
+      border-radius: 15px;
+      height: 15em;
+      display: flex;
+      flex-direction: column;
+  }
+  #single-plant {
+      height: 15em;
+      width: 100%;
+      object-fit: cover;
+  }
+  .bottom-left {
+      position: absolute;
+      bottom: 2px;
+      left: 10px;
+      font-size: 17px;
+      font-weight: 900;
+  }
+  .sidebar {
+      width: 18%;
+  }
+}
+

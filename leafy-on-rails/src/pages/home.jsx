@@ -1,6 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { Link } from "react-router-dom";
 import '../assets/css/home.css';
+import '../assets/css/myplants.css';
+import '../assets/css/plantdirectory.css';
 
 export function Home() {
   return (
