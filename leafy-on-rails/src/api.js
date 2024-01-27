@@ -10,10 +10,11 @@ class api {
     }
   }
 
-  async getPlant(id) {
+  async searchPlant(query) {
     try {
-        const response = await fetch(`${base_url}/plantdirectory/${id}`);
+        const response = await fetch(`${base_url}/plantsearch/${query}`);
         const plant = await response.json();
+        console.log(plant)
         return plant;
     } catch (error) {
         console.log("error", error)
