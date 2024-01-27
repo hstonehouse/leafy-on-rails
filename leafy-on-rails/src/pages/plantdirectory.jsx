@@ -32,7 +32,22 @@ export function PlantDirectory() {
         sidebarDiv.style.display = "block";
         setSidebar(true);
     }
-  }
+	const saveSearchQuery = (event) => {
+		setSearchQuery(event.target.value.toLowerCase());
+	};
+
+	const searchForPlant = async (event) => {
+		event.preventDefault();
+		try {
+			const res = await api.searchPlant(searchQuery)
+		} catch (error) {
+			if (error.response.status === 401) {
+				navigate("/");
+			} else {
+				setSearchNotFoundBoolean(true);
+			}
+		}
+	};
 
   return (
     <section id="plant-directory">
@@ -47,6 +62,34 @@ export function PlantDirectory() {
         <FontAwesomeIcon icon="bars" size="2x" id="burger" onClick={showSideBar}/>
         <p>Plant Directory</p>
       </nav>
+
+			<div className="level-item" id="searchbar">
+				{searchNotFound ? (
+					<p className="has-text-danger">Plant not found. Please try again</p>
+				) : (
+					<br />
+				)}
+				<form>
+					<div className="field has-addons">
+						<p className="control">
+							<input
+								className="input"
+								type="text"
+								placeholder="Search for Plant"
+								onChange={saveSearchQuery}
+							></input>
+						</p>
+						<p className="control">
+							<input
+								className="button"
+								type="submit"
+								value="Search"
+								onClick={searchForPlant}
+							></input>
+						</p>
+					</div>
+				</form>
+			</div>
 
       <div className="all-plants">
         {
