@@ -3,7 +3,7 @@ I am rewriting my [Leafy app](https://github.com/hstonehouse/leafy) using Ruby o
 
 ### How to install React and all the necessary dependencies
 ```
-npx create-react-app leafy-on-rails
+npx create-react-app leafy-react
 npm install
 npm i --save @fortawesome/fontawesome-svg-core
 npm i --save @fortawesome/free-solid-svg-icons
