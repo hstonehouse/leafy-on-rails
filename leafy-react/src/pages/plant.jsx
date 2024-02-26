@@ -1,10 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import api from "../api";
 
 export function PlantPage() {
-	const navigate = useNavigate();
 	let { id } = useParams();
 
 	const [title, setTitle] = useState(""); // the common name of the plant
