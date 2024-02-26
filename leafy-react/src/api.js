@@ -10,6 +10,15 @@ class api {
     }
   }
 
+  async getOnePlant(id) {
+    try {
+        const response = await fetch(`${base_url}/plant/${id}`);
+        return response.json();
+    } catch (error) {
+        console.log("error", error)
+    }
+  }
+
   async searchPlant(query) {
     try {
         const response = await fetch(`${base_url}/plantsearch/${query}`);

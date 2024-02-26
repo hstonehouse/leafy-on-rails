@@ -6,6 +6,11 @@ class PlantController < ApplicationController
     render json: @plants
   end
 
+  def one
+    @plant = Plant.find(params[:id])
+    render json: @plant
+  end
+
   def search
     result = Alias.where('name LIKE ?', "%#{params[:query]}%")
     render json: result
