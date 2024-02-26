@@ -1,7 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Home } from './pages/home';
-import { Register } from "./pages/register";
 import { MyPlants } from "./pages/myplants";
 import { PlantPage } from "./pages/plant";
 import { PlantDirectory } from "./pages/plantdirectory";
