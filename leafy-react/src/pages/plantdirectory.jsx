@@ -45,6 +45,7 @@ export function PlantDirectory() {
 		event.preventDefault();
 		try {
 			const res = await api.searchPlant(searchQuery)
+      setPlantArray(res)
 		} catch (error) {
 			if (error.response.status === 401) {
 				navigate("/");
