@@ -11,7 +11,7 @@ export function PlantPage() {
 	const [water, setWater] = useState(""); // info on how much water the plant needs
 	const [petSafe, setPetSafe] = useState(""); // info on whether or not the plant is pet-safe
 	const [plantImage, setPlantImage] = useState(""); // the plant image URL
-  const [aliasesArray, setAliasesArray] = useState(""); // other names the plant is known by
+  const [aliasesArray, setAliasesArray] = useState([]); // other names the plant is known by
 
 	useEffect(() => {
 		async function fetchPlantData() {
