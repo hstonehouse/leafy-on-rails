@@ -19,6 +19,15 @@ class api {
     }
   }
 
+  async getAliases(id){
+    try {
+      const response = await fetch(`${base_url}/plantaliases/${id}`);
+      return response.json();
+    } catch (error) {
+      console.log("error", error)
+    }
+  }
+
   async searchPlant(query) {
     try {
         const response = await fetch(`${base_url}/plantsearch/${query}`);

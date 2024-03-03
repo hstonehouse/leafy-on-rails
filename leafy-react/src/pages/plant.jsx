@@ -11,9 +11,10 @@ export function PlantPage() {
 	const [water, setWater] = useState(""); // info on how much water the plant needs
 	const [petSafe, setPetSafe] = useState(""); // info on whether or not the plant is pet-safe
 	const [plantImage, setPlantImage] = useState(""); // the plant image URL
+  const [aliasesArray, setAliasesArray] = useState(""); // other names the plant is known by
 
 	useEffect(() => {
-		async function fetchData() {
+		async function fetchPlantData() {
 			try {
 				const response = await api.getOnePlant(id);
 				setTitle(response.title);
@@ -26,8 +27,20 @@ export function PlantPage() {
 				console.log("error", error);
 			}
 		}
-		fetchData();
+		fetchPlantData();
 	});
+
+  useEffect(() => {
+    async function fetchAliases() {
+      try {
+        const response = await api.getAliases(id);
+        setAliasesArray(response);
+      } catch (error) {
+        console.log("error", error);
+      }
+    }
+    fetchAliases();
+  })
 
 	return (
 		<section>
@@ -50,6 +63,10 @@ export function PlantPage() {
 				<p className="description">{water}</p>
 				<p className="subheading">Pet safe?</p>
 				<p className="description">{petSafe}</p>
+        <p className="subheading">Other names</p>
+        {aliasesArray.map((alias) => {
+          return <p className="description">{alias.name}</p>
+        })}
 			</div>
 		</section>
 	);
