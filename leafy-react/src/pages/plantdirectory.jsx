@@ -45,6 +45,9 @@ export function PlantDirectory() {
 		event.preventDefault();
 		try {
 			const res = await api.searchPlant(searchQuery)
+      if (res.length === 0) {
+        setSearchNotFoundBoolean(true);
+      }
       setPlantArray(res)
 		} catch (error) {
 			if (error.response.status === 401) {
@@ -101,6 +104,7 @@ export function PlantDirectory() {
 								className="button"
 								type="submit"
 								value="Search"
+                disabled={searchQuery.length < 3}
 								onClick={searchForPlant}
 							></input>
 						</p>
