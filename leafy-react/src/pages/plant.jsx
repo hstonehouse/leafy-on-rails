@@ -23,24 +23,13 @@ export function PlantPage() {
 				setWater(response.water);
 				setPetSafe(response.pet_safe);
 				setPlantImage(response.image);
+        setAliasesArray(response.aliases);
 			} catch (error) {
 				console.log("error", error);
 			}
 		}
 		fetchPlantData();
-	});
-
-  useEffect(() => {
-    async function fetchAliases() {
-      try {
-        const response = await api.getAliases(id);
-        setAliasesArray(response);
-      } catch (error) {
-        console.log("error", error);
-      }
-    }
-    fetchAliases();
-  })
+	}, [id]);
 
 	return (
 		<section>
@@ -65,7 +54,7 @@ export function PlantPage() {
 				<p className="description">{petSafe}</p>
         <p className="subheading">Other names</p>
         {aliasesArray.map((alias) => {
-          return <p className="description">{alias.name}</p>
+          return <p className="description">{alias}</p>
         })}
 			</div>
 		</section>

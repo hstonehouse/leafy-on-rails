@@ -12,17 +12,11 @@ class api {
 
   async getOnePlant(id) {
     try {
-      const response = await fetch(`${base_url}/plant/${id}`);
-      return response.json();
-    } catch (error) {
-      console.log("error", error)
-    }
-  }
-
-  async getAliases(id){
-    try {
-      const response = await fetch(`${base_url}/plantaliases/${id}`);
-      return response.json();
+      const aliasesReq = await fetch(`${base_url}/plantaliases/${id}`);
+      const plantReq = await fetch(`${base_url}/plant/${id}`);
+      const aliasesRes = await aliasesReq.json();
+      const plantRes = await plantReq.json();
+      return {...plantRes, aliases: aliasesRes.map((res) => {return res.name})};
     } catch (error) {
       console.log("error", error)
     }
