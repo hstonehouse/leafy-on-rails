@@ -16,7 +16,7 @@ class api {
       const plantReq = await fetch(`${base_url}/plant/${id}`);
       const aliasesRes = await aliasesReq.json();
       const plantRes = await plantReq.json();
-      return {...plantRes, aliases: aliasesRes.map((res) => {return res.name})};
+      return {...plantRes, aliases: aliasesRes.map(res => res.name)};
     } catch (error) {
       console.log("error", error)
     }
