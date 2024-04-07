@@ -23,7 +23,7 @@ export function PlantPage() {
 				setWater(response.water);
 				setPetSafe(response.pet_safe);
 				setPlantImage(response.image);
-        setAliasesArray(response.aliases);
+        setAliasesArray(response.alias_names);
 			} catch (error) {
 				console.log("error", error);
 			}

@@ -7,8 +7,8 @@ class PlantController < ApplicationController
   end
 
   def one
-    @plant = Plant.find(params[:id])
-    render json: @plant
+    plant = Plant.find(params[:id])
+    render json: plant, serializer: PlantSerializer
   end
 
   def search
