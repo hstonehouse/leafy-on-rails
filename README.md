@@ -10,6 +10,12 @@ npm i --save @fortawesome/free-solid-svg-icons
 npm i --save @fortawesome/react-fontawesome@latest
 ```
 
+### FEATURES I WANT TO ADD:
+* Show search results as soon as the user starts typing
+* Ability to sort plants alphabetically
+* Reset button to view full plant list after searching
+* User login
+
 ### TODOS:
 This README would normally document whatever steps are necessary to get the
 application up and running.
