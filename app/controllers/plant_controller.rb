@@ -12,7 +12,10 @@ class PlantController < ApplicationController
   end
 
   def search
-    result = Plant.joins(:aliases).where('name LIKE ?', "%#{params[:query]}%").uniq
+    result = Plant.joins(:aliases)
+                  .where('aliases.name LIKE ?', "%#{params[:query].downcase}%")
+                  .or(Plant.where('plants.title LIKE ?', "%#{params[:query].downcase}%"))
+                  .uniq
     render json: result
   end
 end
