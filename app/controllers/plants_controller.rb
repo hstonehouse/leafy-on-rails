@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PlantController < ApplicationController
+class PlantsController < ApplicationController
   def all
     @plants = Plant.all
     render json: @plants
