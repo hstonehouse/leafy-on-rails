@@ -8,7 +8,9 @@ class PlantsController < ApplicationController
 
   def one
     plant = Plant.find(params[:id])
-    render json: plant, serializer: PlantSerializer
+    render json: plant, serializer: PlantSerializer if plant
+    rescue
+      render json: { error: 'Plant not found' }, status: :not_found
   end
 
   def search
