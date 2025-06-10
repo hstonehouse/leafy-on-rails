@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-Factory.define do
+FactoryBot.define do
   factory :plant do
     sequence(:title) {|n| 'Plant #{n}' }
 
